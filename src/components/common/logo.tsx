@@ -3,7 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 
 function Logo({ isWhiteVersion = false }: {
-    isWhiteVersion: boolean
+    isWhiteVersion?: boolean
 }) {
     return (
 
