@@ -114,3 +114,35 @@
     @apply bg-background text-foreground antialiased;
   }
 }
+
+
+.appstore-download {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Left background */
+.appstore-download::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* full width & height */
+  background-image: url("/assets/images/bg/download-app-grid.png");
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: contain;
+  pointer-events: none;
+}
+
+
+.appstore-download::after {
+  content: "";
+  position: absolute;
+  inset: 0; /* full width & height */
+  background-image: url("/assets/images/bg/download-app-grid.png");
+  background-repeat: no-repeat;
+  /* background-position: right center; */
+  background-size: contain;
+  transform: rotate(180deg);
+  transform-origin: center;
+  pointer-events: none;
+}
