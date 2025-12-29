@@ -3,6 +3,8 @@ import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 import './globals.css';
 import { Toaster } from '@/components/ui/sonner';
+import { cn } from '@/lib/utils';
+import { Header } from '@/components/layout/header';
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -17,7 +19,7 @@ const poppins = Poppins({
     "800",
     "900",
   ],
-  variable:"--font-poppins"
+  variable: "--font-poppins"
 });
 
 export const metadata: Metadata = {
@@ -31,9 +33,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={poppins.className}>
+    <html lang="en" className="scroll-smooth">
+      <body className={cn(poppins.className, "min-h-screen")}>
+
+
         {children}
+
         <Toaster />
       </body>
     </html>
